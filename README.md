@@ -7,6 +7,7 @@ this example, I did using jersey with jdbc a sample crud (@GET, @POST,@PUT, @DEL
 
 this example suitable for multiple output format. (XML-JSON)
 
+<!--
 <employees>
     <employee>
         <employeeName>Ayşenur</employeeName>
@@ -16,6 +17,7 @@ this example suitable for multiple output format. (XML-JSON)
     </employee>
 </employees>  
 
+-->
 {
   "employees": {
     "employee": {
