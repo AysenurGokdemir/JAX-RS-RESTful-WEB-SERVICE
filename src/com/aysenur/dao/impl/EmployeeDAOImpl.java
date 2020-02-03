@@ -7,10 +7,16 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.aysenur.dao.EmployeeDao;
+import com.aysenur.dao.IBaseDao;
 import com.aysenur.model.Employee;
 
-public class EmployeeDAOImpl implements EmployeeDao {
+
+/**
+ * @author Aysenur
+ *
+ */
+public class EmployeeDAOImpl implements IBaseDao<Employee>{
+
 	static Connection con = null;
 
 	@Override
@@ -84,7 +90,7 @@ public class EmployeeDAOImpl implements EmployeeDao {
 			String sorgu = "SELECT * FROM Musteri WHERE musteriId=?";
 			PreparedStatement preparedStatement = con.prepareStatement(sorgu);
 
-			preparedStatement.setInt(1, employeeId); // 1 -> bir tane soru i˛areti var demektir yani bu birinci
+			preparedStatement.setInt(1, employeeId); // 1 -> bir tane soru i√æareti var demektir yani bu birinci
 														// parametredir ve degeri employeeiId dir.
 
 			ResultSet resultSet = preparedStatement.executeQuery();
@@ -156,10 +162,10 @@ public class EmployeeDAOImpl implements EmployeeDao {
 			int queryResult = preparedStatement.executeUpdate();
 			
 			if (queryResult==1) {
-				infoResult="ED›t SUCCESSFUL";
+				infoResult="ED√ùt SUCCESSFUL";
 				editState=true;
 				}else {
-				infoResult="ED›T UNSUCCESS";
+				infoResult="ED√ùT UNSUCCESS";
 				editState=false;
 			}
 			
@@ -177,7 +183,6 @@ public class EmployeeDAOImpl implements EmployeeDao {
 		// TODO Auto-generated method stub
 
 		connectionToDatabase();
-		Employee employee = new Employee();
 		boolean deleteState = false;
 		String result = "";
 
@@ -203,29 +208,32 @@ public class EmployeeDAOImpl implements EmployeeDao {
 		return deleteState;
 	}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EmployeeDAOImpl nesne = new EmployeeDAOImpl();
 		Employee employee = new Employee();
 		nesne.connectionToDatabase();
-		/*
-		 * nesne.dataRead(); 
-		 * nesne.dataRead(3);
-		 
 
-		
+		nesne.dataRead();
+		nesne.dataRead(3);
+
 		employee.setEmployeeNo(456);
 		employee.setEmployeeName("java");
 		employee.setEmployeeSurname("RESTful");
 
 		nesne.dataAdd(employee);
-		*/
-		//nesne.dataDelete(2);
-		//nesne.dataEdit(nesne.dataRead(1), 4);
-		employee.setEmployeeNo(78);
-		employee.setEmployeeName("YAS›N");
-		employee.setEmployeeSurname("G÷KDEM›R");
+
+		nesne.dataDelete(2);
+		nesne.dataEdit(nesne.dataRead(1), 4);
+	    employee.setEmployeeNo(78);
+		employee.setEmployeeName("AY≈ûENUR");
+		employee.setEmployeeSurname("G√ñKDEMƒ∞R");
 		nesne.dataEdit(employee, 1);
 		nesne.dataRead();
-		
+	
+
 	}
+	*/
+	
 }
+
+
