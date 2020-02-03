@@ -1,14 +1,14 @@
 package com.aysenur.ws;
 
+import com.aysenur.dao.impl.CompanyDAOImpl;
+import com.aysenur.model.Company;
+
 import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-
-import com.aysenur.dao.impl.CompanyDAOImpl;
-import com.aysenur.model.Company;
 
 @Path("/company")
 public class CompanyService {

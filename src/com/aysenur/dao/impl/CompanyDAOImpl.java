@@ -1,14 +1,14 @@
 package com.aysenur.dao.impl;
 
+import com.aysenur.dao.IBaseDao;
+import com.aysenur.model.Company;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.aysenur.dao.IBaseDao;
-import com.aysenur.model.Company;
 
 
 public class CompanyDAOImpl implements IBaseDao<Company> {
@@ -82,7 +82,7 @@ public class CompanyDAOImpl implements IBaseDao<Company> {
 		  String sorgu = "SELECT * FROM vale_firmalari WHERE firmaId=?";
 		  PreparedStatement preparedStatement = con.prepareStatement(sorgu);
 		  
-		  preparedStatement.setInt(1, firmaId); // 1 -> bir tane soru iþareti vardemektir yani bu birinci // parametredir ve degeri employeeiId dir.
+		  preparedStatement.setInt(1, firmaId); // 1 -> bir tane soru iï¿½areti vardemektir yani bu birinci // parametredir ve degeri employeeiId dir.
 		  
 		  ResultSet resultSet = preparedStatement.executeQuery();
 		  

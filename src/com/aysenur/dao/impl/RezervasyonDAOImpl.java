@@ -1,12 +1,11 @@
 package com.aysenur.dao.impl;
+import com.aysenur.dao.IBaseDao;
 import com.aysenur.model.Rezervasyon;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.util.List;
-
-import com.aysenur.dao.IBaseDao;
 public class RezervasyonDAOImpl implements IBaseDao<Rezervasyon>  {
 	static Connection con = null;
 	@Override
