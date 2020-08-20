@@ -1,5 +1,5 @@
 # JAX-RS-RESTful-WEB-SERVICE
-CRUD example with JDBC
+A reservation system for restaurants made with JDBC.
 
 JAX-RS , Java API for RESTful Web Services means.
 
